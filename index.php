@@ -1,9 +1,12 @@
 <?php
+// index.php
 $localPath = $_SERVER['DOCUMENT_ROOT'];
-require_once($localPath.'/configurations/vars.php');
+require_once __DIR__ . '/configurations/vars.php';
+
+
 
 // Criação de chave pública
-require_once($localPath.'/controllers/KeyController.php');
+require_once __DIR__ . '/controllers/KeyController.php';
 $newPubKey = new KeyController($ps_Token, $ps_pubKeyURL);
 $pubKey = $newPubKey->getPublicKey();
 
@@ -135,11 +138,11 @@ $pubKey = $newPubKey->getPublicKey();
     </div>
 </body>
 <!-- SDK Pagseguro -->
-<script src="https://assets.pagseguro.com.br/checkout-sdk-js/rc/dist/browser/pagseguro.js"></script>
+<button type="submit" class="btn btn-success btn-lg btn-block form-control fw-bold h2">FINALIZAR</button>
+
 <!-- Informações gerais do pedido e do cliente -->
-<script src="<?php $localPath;?>/assets/js/main.js"></script>
-<!-- Encriptação de dados do cartão -->
+<script src="<?php $localPath;?>assets/js/main.js"></script>
 <script src="<?php $localPath;?>/assets/js/encryptCard.js"></script>
-<!-- Scripts JS para pagamento com cartão de crédito -->
 <script src="<?php $localPath;?>/assets/js/payTransaction.js"></script>
+
 </html>

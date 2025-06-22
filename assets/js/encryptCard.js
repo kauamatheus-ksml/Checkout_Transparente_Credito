@@ -1,3 +1,4 @@
+//encryptCard.js
 function encryptCardData(cardData){
 	console.log('Encriptando dados do cartão...');
 	let card = PagSeguro.encryptCard({

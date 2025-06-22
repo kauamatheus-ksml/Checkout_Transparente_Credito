@@ -1,4 +1,5 @@
 <?php
+//payControllerCreditCard.php
 header("Content-Type: application/json; charset=UTF-8");
 $localPath = $_SERVER['DOCUMENT_ROOT'];
 require_once($localPath.'/configurations/vars.php');
@@ -109,7 +110,7 @@ if(isset($_POST['cc_encrypted'])){
 		$err_log = new LogsController($err);
 		$err_log->err_log();
 	} else {
-		$msg = 200;
+		$msg = ["status" => 200, "message" => "Pagamento processado com sucesso!"];
 		$log = new LogsController($retorno);
 		$log->log();
 	}

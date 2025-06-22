@@ -1,3 +1,4 @@
+//main.js
 $(document).ready(function(){
 	$('#payBTN').on('click', function(){
 		console.log('Validando dados do formulário...');
